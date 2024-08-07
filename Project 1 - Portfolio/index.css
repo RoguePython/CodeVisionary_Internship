@@ -1,0 +1,91 @@
+body {
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    display: relative;
+}
+
+.home {
+    background: linear-gradient(rgba(0, 0, 0, 25%), rgba(0, 0, 0, 25%)),
+    url("html1.png");
+    background-size: cover;
+    height: 1280px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: white;
+    font-family: Verdana;
+    text-shadow: 5px 5px black;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.home span {
+    position: relative;
+    width: fit-content;
+}
+
+.home span::before {
+    animation: words 20s infinite;
+    content: "Web Developer 🎅";
+    color: red;
+}
+
+.home span::after {
+    content: "";
+    position: absolute;
+    width: calc(3% + 8px);
+    height: 100%;
+    background-color: clear;
+    right: -8px;
+    /* border-left: 2px solid red;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite; */
+}
+
+/* @keyframes cursor {
+    to{
+        border-left: 2px solid clear;
+    }
+} */
+
+@keyframes words {
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Software Developer";
+    }
+    41%, 60%{
+        content: "Game Developer";
+    }
+    61%, 80%{
+        content: "Superhero";
+    }
+    81%, 100%{
+        content: "Gamer";
+    }
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+.toolbar{
+    position: fixed;
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding: 5px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    
+}
