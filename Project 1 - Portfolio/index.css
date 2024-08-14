@@ -22,6 +22,8 @@ ul {
     color: white;
 }
 
+/* Toolbar */
+
 .toolbar{
     font-size: 35px;
     font-family: Verdana;
@@ -34,6 +36,7 @@ ul {
     width: 100%;
     display: flex;
     align-items: center;
+    z-index: 1000; /* Ensures toolbar always stays on top    */
 }
 
 .title {
@@ -61,6 +64,8 @@ ul {
     display: flex;
     padding: 0 10%;
 }
+
+/* Homepage */
 
 .home {
     background: linear-gradient(rgba(0, 0, 0, 25%) 20%, rgb(31,45,57)), url("html1.png");
@@ -95,15 +100,7 @@ ul {
     height: 100%;
     background-color: clear;
     right: -8px;
-    /* border-left: 2px solid red;
-    animation: cursor .8s infinite, typing 20s steps(14) infinite; */
 }
-
-/* @keyframes cursor {
-    to{
-        border-left: 2px solid clear;
-    }
-} */
 
 @keyframes words {
     0%, 20%{
@@ -123,14 +120,7 @@ ul {
     }
 }
 
-@keyframes typing {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
-        width: 0;
-    }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
-        width: calc(100% + 8px);
-    }
-}
+/* About me */
 
 .about-me {
     height: 1280px;
@@ -139,34 +129,84 @@ ul {
 
 .left_block {
     padding: 50px;
-    width: 30%;
-    height: 500px;
-    margin-left: 1%;
+    width: 28%;
+    height: 900px;
+    margin-left: 7%;
     background-color: rgb(26,26,26);
     float: left;
     border-radius: 75px;
     color: white;
+    font-size: 28px;
+    line-height: 1.5;
+    border: red solid 1px;   
+}
+
+.left_block b {
+    font-size: 35px;
+}
+
+.selfpic img{
+    height: 375px;
+    margin: 0 2%;
+    border-radius: 360px;
+    position: flex;
+    float: left;
 }
 
 .right_block {
     padding: 50px;
-    width: 48%;
-    margin: 0px 1% 0 36%;
+    height: 900px;
+    max-width: 48%;
+    margin-right: 7%;
     background-color: rgb(26,26,26);
     border-radius: 75px;
     color: white;
+    font-size: 22px;
+    line-height: 1.5;
+    float: right;
+    font-family: verdana;
+    border: red solid 1px;    
 }
+
+.skills_technologies {
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.skills_technologies b {
+    padding-left: 50px;
+}
+
+.skills_technologies ul li{
+    font-size: 25px;
+    padding-top: 20px ;
+    list-style-type: none;
+}
+
+.skills_technologies hr {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-top: 4px red solid;
+}
+
+/* Work Experience */
 
 .Work_Experience {
-    background-color: rgb(26,26,26);
-    height: 1280px;
+    padding-left: 6%;
+    border: 3px red solid;
+    background-color: black;
+    height: 500px;
 }
 
+/* Portfolio */
 
 .Portfolio {
     background-color: rgb(26,26,26);
     height: 1280px;
 }
+
+/* Contact */
 
 .contact {
     background-color: rgb(26,26,26);
