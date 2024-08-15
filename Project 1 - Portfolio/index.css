@@ -4,12 +4,15 @@ body {
     padding: 0;
     margin: 0;
     display: relative;
+    font-family: verdana;
 }
 
 h1 {
     margin: 0;
     color: white;
     font-size: 50px;
+    padding-bottom: 25px;
+    text-align: center;
 }
 
 h3 {
@@ -19,6 +22,10 @@ h3 {
 ul {
     margin: 0;
     padding: 0px 50px;
+    color: white;
+}
+
+a {
     color: white;
 }
 
@@ -48,7 +55,6 @@ ul {
 .toolbar a{
     margin: 10px;
     font-size: 20px;
-    color: white;
     text-decoration: none;
 }
 
@@ -70,13 +76,12 @@ ul {
 .home {
     background: linear-gradient(rgba(0, 0, 0, 25%) 20%, rgb(31,45,57)), url("html1.png");
     background-size: cover;
-    height: 1280px;
+    height: 1200px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 34px;
-    font-family: Verdana;
     font-weight: 600;
     text-shadow: 5px 5px black;
     min-width: 280px;
@@ -89,7 +94,7 @@ ul {
 
 .home span::before {
     animation: words 10s infinite;
-    content: "Web Developer 🎅";
+    content: "Web Developer";
     color: red;
 }
 
@@ -104,73 +109,96 @@ ul {
 
 @keyframes words {
     0%, 20%{
-        content: "Web Developer...";
+        content: "Web Developer";
     }
     21%, 40%{
-        content: "Software Developer...";
+        content: "Software Developer";
     }
     41%, 60%{
-        content: "Game Developer...";
+        content: "Game Developer";
     }
     61%, 80%{
-        content: "Superhero...";
+        content: "Superhero";
     }
     81%, 100%{
-        content: "Gamer...";
+        content: "Gamer";
     }
 }
 
 /* About me */
 
 .about-me {
-    height: 1280px;
-    background-image: linear-gradient(176deg, rgb(31,45,57) 70%, rgb(26,26,26) calc(80% + 2px))
+    min-height: 1280px;
+    background-image: linear-gradient(176deg, rgb(31,45,57) 70%, rgb(26,26,26) calc(80% + 2px));
+    display: flex;
+    justify-content: space-between;
 }
 
 .left_block {
     padding: 50px;
-    width: 28%;
-    height: 900px;
-    margin-left: 7%;
+    min-width: 35%;
+    margin: auto;
     background-color: rgb(26,26,26);
-    float: left;
     border-radius: 75px;
     color: white;
     font-size: 28px;
     line-height: 1.5;
-    border: red solid 1px;   
+    border: red solid 1px; 
 }
 
 .left_block b {
-    font-size: 35px;
+    font-size: 32px;
 }
 
-.selfpic img{
+.selfpic {
+    display: flex;
+    align-items: center; /* Vertically center the text next to the image */
+    margin-bottom: 20px;
+}
+
+.selfpic img {
     height: 375px;
-    margin: 0 2%;
     border-radius: 360px;
-    position: flex;
-    float: left;
+    margin-right: 20px; /* Add some space between the image and the text */
+}
+
+.selfpic-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* Allow the text to take up remaining space */
+}
+
+@media (max-width: 1800px) {
+    .selfpic {
+        display: block; /* Stack the image and text vertically */
+        text-align: center; /* Center the text under the image */
+    }
+
+    .selfpic img {
+        margin-right: 0; /* Remove the right margin */
+        margin-bottom: 20px; /* Add space between the image and the text */
+    }
+
+    .selfpic-text {
+        align-items: center; /* Center the text under the image */
+    }
 }
 
 .right_block {
     padding: 50px;
-    height: 900px;
-    max-width: 48%;
-    margin-right: 7%;
+    width: 48%;
+    margin: auto;
     background-color: rgb(26,26,26);
     border-radius: 75px;
     color: white;
     font-size: 22px;
     line-height: 1.5;
-    float: right;
-    font-family: verdana;
-    border: red solid 1px;    
+    border: red solid 1px;  
 }
 
 .skills_technologies {
     padding-top: 15px;
-    padding-left: 30px;
 }
 
 .skills_technologies b {
@@ -193,22 +221,191 @@ ul {
 /* Work Experience */
 
 .Work_Experience {
-    padding-left: 6%;
-    border: 3px red solid;
+    padding: 20px;
+    background-color: rgb(26,26,26);
+    min-height: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.Work_Experience_Table {
+    width: 80%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 22px;
+    margin-top: 25px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+}
+
+.Work_Experience_Table th, .Work_Experience_Table td {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: left;
+}
+
+.Work_Experience_Table th {
     background-color: black;
-    height: 500px;
+    text-decoration: Bold;
+    border: none;
+}
+
+.Work_Experience_Table tr {
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.Work_Experience_Table tr:hover {
+    background-color: rgb(31,45,57);
+}
+
+.details-row td{
+    padding: 0 6%;
+}
+
+.details-list {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.active-row .details-list {
+    display: block;
 }
 
 /* Portfolio */
 
 .Portfolio {
-    background-color: rgb(26,26,26);
-    height: 1280px;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 50%), rgba(0, 0, 0, 50%)), url("html1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: auto;
+    padding: 100px 0 200px 0;
+}
+
+.project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust space between project containers */
+}
+
+/* Container for each project */
+.project-container {
+    position: relative;
+    width: 300px;
+    border: 2px solid red;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    color: white;
+}
+
+/* Styling for the project images */
+.project-image {
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 175px;
+    display: block;
+}
+
+/* Button overlay */
+.project-link {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+.project-link:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Styling for project information */
+.project-info {
+    padding: 15px;
+    text-align: center;
+    height: 100%;
+    background-color: rgb(31,45,57);
 }
 
 /* Contact */
 
 .contact {
     background-color: rgb(26,26,26);
-    height: 1280px;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.contact h1 {
+    padding-bottom: 20px;
+}
+
+.contact img {
+    height: 50px;
+}
+
+.Get_In_Touch {
+    font-size: 22px;
+    padding: 0 50px 50px 50px;
+    margin: auto;
+    width: 20%;
+    background-color: rgb(31,45,57);
+    border: 1px red solid;
+    border-radius: 75px;
+    text-align: center;
+}
+
+/* Media query for screen widths 1400-1800px */
+@media (max-width: 1800px) {
+    .Get_In_Touch {
+        width: 30%;
+    }
+}
+
+/* Media query for screen widths 1400px and below */
+@media (max-width: 1400px) {
+    .Get_In_Touch {
+        width: 40%;
+    }
+}
+
+.Get_In_Touch p {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    color: white;
+}
+
+.Get_In_Touch img {
+    padding-right: 25px;
+    height: 50px;
+}
+
+.Social_Media {
+    text-align: center;
+}
+
+.Social_Media img {
+    transition: transform 0.3s ease;
+}
+
+.Social_Media img:hover {
+    transform: scale(1.5);
 }
