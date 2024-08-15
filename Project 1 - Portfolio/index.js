@@ -1,3 +1,4 @@
+// Smooth scrolling to main components (Home, About me, Work experience etc.)
 document.addEventListener('DOMContentLoaded', function() { 
     document.querySelectorAll('.navbar a').forEach(anchor => {
         anchor.addEventListener('click', function (scrollanimation) {
@@ -19,39 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     document.querySelectorAll('.navbar a').forEach(anchor => {
-//         anchor.addEventListener('click', function(event) {
-//             event.preventDefault();
-//             const targetId = this.getAttribute('href').substring(1);
-//             const targetElement = document.getElementById(targetId);
-            
-//             if (targetElement) {
-//                 window.scroll({
-//                     top: targetElement.offsetTop,
-//                     behavior: 'smooth'
-//                 });
-//             }
-//         });
-//     });
-// });
+// Dropdown table for showing skills learned at previous work experiences
+document.addEventListener("DOMContentLoaded", function() {
+    const expandableRows = document.querySelectorAll('.expandable-row');
 
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function(e) {
-//         e.preventDefault();
+    expandableRows.forEach(row => {
+        row.addEventListener('click', function() {
+            const detailsRow = this.nextElementSibling;
+            const isVisible = detailsRow.classList.contains('active-row');
 
-//         document.querySelectorAll('a[href^="#"]').forEach(link => {
-//             link.classList.remove('active');
-//         });
-
-//         // this.classList.add('active');
-
-//         const targetElement = document.querySelector(this.getAttribute('href'));
-//         const offset = 75; // Number of pixels to adjust above the target
-
-//         window.scrollTo({
-//             top: targetElement.offsetTop - offset,
-//             behavior: 'smooth'
-//         });
-//     });
-// });
+            // Toggle the visibility of the details row
+            if (isVisible) {
+                detailsRow.classList.remove('active-row');
+            } else {
+                detailsRow.classList.add('active-row');
+            }
+        });
+    });
+});
