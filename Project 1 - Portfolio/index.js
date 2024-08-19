@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                const offset = 100; // Adjust this value to set how much higher you want to scroll
+                const offset = 50; // Adjust this value to set how much higher you want to scroll
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
                 window.scrollTo({
